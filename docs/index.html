@@ -5,51 +5,307 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개인정보 처리방침 | Fontopia</title>
     <style>
+        :root {
+            --primary: #16a34a;
+            --primary-light: #22c55e;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+        }
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Pretendard", sans-serif;
+            line-height: 1.75;
+            padding: 30px 20px;
             margin: 0;
-            background-color: #f8f8f8;
+            background-color: var(--bg);
+            color: var(--text-main);
         }
         .container {
-            max-width: 700px;
+            max-width: 780px;
             margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            background-color: var(--card-bg);
+            padding: 44px;
+            border-radius: 14px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+        }
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 14px;
+            margin-bottom: 24px;
         }
         h1 {
-            color: #333;
+            color: #0f172a;
+            font-size: 26px;
+            margin: 0;
         }
-        p {
-            color: #666;
+        .lang-switch {
+            display: inline-flex;
+            background-color: #f1f5f9;
+            border-radius: 9999px;
+            padding: 3px;
+            border: 1px solid #cbd5e1;
+        }
+        .lang-btn {
+            border: none;
+            background: transparent;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active {
+            background-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .lang-btn:hover:not(.active) {
+            color: #0f172a;
+        }
+        h2 {
+            color: #15803d;
+            font-size: 19px;
+            margin-top: 36px;
+            margin-bottom: 12px;
+        }
+        p, li {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+        ul {
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid var(--primary-light);
+            padding: 18px 22px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        .highlight-box p {
+            margin: 0;
+            color: #166534;
+            font-weight: 500;
+        }
+        .footer {
+            margin-top: 44px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: #94a3b8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .lang-section {
+            display: none;
+        }
+        .lang-section.active {
+            display: block;
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px 18px;
+            }
+            .header-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            h1 {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>개인정보 처리방침</h1>
-        <p>본 개인정보 처리방침은 Fontopia가 개인정보를 어떻게 처리하고 보호하는지 설명합니다. 본 앱은 개인정보를 수집하지 않으며, 이 방침은 대한민국의 개인정보 보호법을 준수합니다.</p>
+        <div class="header-bar">
+            <h1 id="page-title">Fontopia 개인정보 처리방침</h1>
+            <div class="lang-switch" role="group" aria-label="Language Switcher">
+                <button type="button" class="lang-btn" id="btn-ko" onclick="switchLanguage('ko')">한국어</button>
+                <button type="button" class="lang-btn" id="btn-en" onclick="switchLanguage('en')">English</button>
+            </div>
+        </div>
 
-        <h2>개인정보 수집</h2>
-        <p>본 앱은 사용자로부터 어떠한 개인정보도 수집하지 않습니다. 앱의 기능은 사용자 데이터나 개인정보를 수집하거나 저장하지 않고 작동합니다.</p>
+        <!-- ================= 한국어 (KO) ================= -->
+        <div id="section-ko" class="lang-section">
+            <p>Fontopia(이하 "서비스")는 이용자의 개인정보 보호를 매우 중요하게 생각하며, 대한민국의 「개인정보 보호법」 및 글로벌 개인정보보호 표준, Apple 및 Google의 플랫폼 정책을 준수합니다.</p>
+            
+            <div class="highlight-box">
+                <p>🛡️ <strong>핵심 프라이버시 원칙</strong>: Fontopia는 사용자가 방문하는 웹사이트의 주소(URL), 도메인, 웹페이지의 본문 내용, 검색어, 그리고 사용자의 개인 식별 정보(이름, 연락처, 기기 식별자 등)를 <strong>일체 수집하거나 저장하지 않습니다.</strong></p>
+            </div>
 
-        <h2>쿠키 및 추적 기술</h2>
-        <p>본 앱은 쿠키, 웹 비콘, 픽셀 태그 또는 기타 추적 기술을 사용하지 않습니다. 이로 인해 앱이 사용자의 웹 활동을 추적하거나 분석하지 않습니다.</p>
+            <h2>1. 수집하는 정보 및 수집 방법</h2>
+            <p>서비스 품질 개선 및 글꼴 선호도 분석을 위해 서비스 이용 과정에서 다음과 같은 최소한의 <strong>비식별 익명 상호작용 통계 데이터</strong>가 수집될 수 있습니다:</p>
+            <ul>
+                <li><strong>제품 상호작용 데이터 (Product Interaction)</strong>: 사용자가 확장 프로그램 팝업 또는 앱 내에서 선택한 글꼴 이름(font_name), 스타일 필터 조작, 정렬 조작, 기본 글꼴 복원 액션, 팝업 오픈 여부.</li>
+                <li><strong>환경 진단 정보</strong>: 브라우저 환경(Safari 또는 Chrome), 운영체제 유형(iOS, macOS, Windows), 확장 프로그램 및 앱 버전.</li>
+                <li><strong>익명 식별자</strong>: 사용자를 특정할 수 없도록 앱 설치 시 기기 내에서 무작위로 생성된 36자리 임의 문자열(UUID/GA Client ID)이 분석 서버 세션 구분에만 사용됩니다.</li>
+            </ul>
 
-        <h2>제3자 서비스 및 데이터 공유</h2>
-        <p>본 앱은 제3자 서비스와 연동하거나 제3자와 개인정보를 공유하지 않습니다. 따라서 본 앱 사용으로 인해 제3자에게 개인정보가 노출될 가능성은 없습니다.</p>
+            <h2>2. 수집하지 않는 정보 (철저한 프라이버시 보호)</h2>
+            <p>Fontopia는 다음 정보들을 기술적으로 <strong>원천 배제</strong>하며 절대 수집하지 않습니다:</p>
+            <ul>
+                <li>❌ <strong>방문 URL 및 브라우징 히스토리</strong>: 어떤 웹사이트를 방문하고 있는지 일체 알 수 없으며 수집하지 않습니다.</li>
+                <li>❌ <strong>개인 식별 정보 (PII)</strong>: 이름, 이메일, 전화번호, 회원 계정 정보 등.</li>
+                <li>❌ <strong>하드웨어 고유 식별자</strong>: Apple 광고 식별자(IDFA), 벤더 식별자(IDFV), IMEI, MAC 주소.</li>
+                <li>❌ <strong>웹페이지 입력 데이터</strong>: 웹사이트 양식 입력값, 비밀번호, 텍스트 본문 등.</li>
+            </ul>
 
-        <h2>데이터 보안</h2>
-        <p>본 앱은 어떠한 사용자 데이터도 수집하거나 저장하지 않으므로, 데이터 보안 조치가 필요하지 않습니다. 그러나 본 앱은 최상의 품질과 보안을 제공하기 위해 노력하고 있습니다.</p>
+            <h2>3. 정보의 이용 목적</h2>
+            <ul>
+                <li>가장 인기 있는 웹 글꼴 랭킹 산출 및 고품질 한국어 폰트 추가 선정에 활용</li>
+                <li>기능별 사용 빈도(필터링, 정렬, 초기화 등) 파악을 통한 사용자 경험(UX) 개선</li>
+                <li>비정상 렌더링 또는 오류 발생 시 확장 프로그램의 기술적 안정성 확보</li>
+            </ul>
 
-        <h2>사용자 권리</h2>
-        <p>본 앱은 개인정보를 수집하지 않기 때문에, 개인정보 관련 권리를 행사할 필요가 없습니다. 이는 앱이 개인정보를 수집하거나 저장하지 않기 때문입니다.</p>
+            <h2>4. 외부 분석 도구의 사용</h2>
+            <p>서비스는 통계 분석을 위해 다음 제3자 분석 서비스를 표준 REST API 방식으로 사용합니다:</p>
+            <ul>
+                <li><strong>Google Analytics 4 (Measurement Protocol) & Firebase Analytics</strong>: Google LLC에서 제공하는 글로벌 분석 도구로, 전송되는 모든 데이터는 익명화 처리되며 사용자를 추적(Tracking)하거나 타사 광고와 결합하는 데 사용되지 않습니다.</li>
+            </ul>
 
-        <h2>개인정보 처리방침 변경</h2>
-        <p>본 개인정보 처리방침은 추후 변경될 수 있습니다. 중요한 변경 사항이 발생할 경우, 앱 내에서 공지하거나 기타 적절한 방법으로 사용자에게 알릴 것입니다.</p>
+            <h2>5. 개인정보보호 문의 및 지원</h2>
+            <p>서비스 이용 중 발생하는 프라이버시 관련 문의는 아래 지원 채널을 통해 연락주시면 신속히 처리해 드리겠습니다.</p>
+            <ul>
+                <li>이메일: <a href="mailto:support@whitelips.com">support@whitelips.com</a> (또는 GitHub 저장소 Issue)</li>
+                <li>지원 페이지: <a href="https://whitelips.github.io/fontopia-support/">https://whitelips.github.io/fontopia-support/</a></li>
+            </ul>
+
+            <div class="footer">
+                <span>공고일자: 2026년 9월 18일</span>
+                <span>시행일자: 2026년 9월 18일</span>
+            </div>
+        </div>
+
+        <!-- ================= English (EN) ================= -->
+        <div id="section-en" class="lang-section">
+            <p>Fontopia ("the Service") highly values user privacy and complies with the Personal Information Protection Act of the Republic of Korea, global privacy standards, and Apple / Google platform privacy guidelines.</p>
+            
+            <div class="highlight-box">
+                <p>🛡️ <strong>Core Privacy Principle</strong>: Fontopia <strong>strictly DOES NOT collect or store</strong> any visited website addresses (URLs), domains, webpage body content, search queries, or personally identifiable information (such as names, phone numbers, or persistent hardware identifiers).</p>
+            </div>
+
+            <h2>1. Information We Collect and Collection Methods</h2>
+            <p>To improve Korean web typography and analyze font preferences, the Service may collect the following minimal, <strong>de-identified, anonymous product interaction data</strong> during usage:</p>
+            <ul>
+                <li><strong>Product Interaction Data</strong>: Selected font family and style name, designer/type filter adjustments, table sorting actions, font reset actions, and extension popup launch events.</li>
+                <li><strong>Environmental Diagnostics</strong>: Browser platform (Safari or Chrome), operating system (iOS, macOS, Windows), extension and companion app version.</li>
+                <li><strong>Anonymous Client Identifier</strong>: A pseudorandom alphanumeric string (UUID / GA Client ID) generated locally on your device upon installation, used solely to distinguish analytical sessions without identifying any individual.</li>
+            </ul>
+
+            <h2>2. Information We Never Collect (Strict Safeguards)</h2>
+            <p>Fontopia technically and architecturally <strong>excludes</strong> the following data from ever leaving your device:</p>
+            <ul>
+                <li>❌ <strong>Visited URLs and Browsing History</strong>: We have zero visibility into which websites you visit or browse.</li>
+                <li>❌ <strong>Personally Identifiable Information (PII)</strong>: Names, email addresses, phone numbers, account credentials, or user profiles.</li>
+                <li>❌ <strong>Hardware and Advertising Identifiers</strong>: Apple IDFA (Identifier for Advertisers), IDFV, IMEI, MAC addresses, or persistent device serials.</li>
+                <li>❌ <strong>Webpage Content and Form Inputs</strong>: Text inputs, form data, passwords, or clipboard contents.</li>
+            </ul>
+
+            <h2>3. Purpose of Information Use</h2>
+            <ul>
+                <li>Aggregating periodic rankings of popular Korean web fonts to prioritize curating high-demand typefaces.</li>
+                <li>Analyzing feature usage frequencies (filtering, sorting, reset) to continuously improve user experience (UX).</li>
+                <li>Monitoring extension stability and technical reliability across diverse web layouts.</li>
+            </ul>
+
+            <h2>4. Third-Party Analytics Services</h2>
+            <p>The Service utilizes standard, secure REST APIs to communicate minimal anonymous telemetry with:</p>
+            <ul>
+                <li><strong>Google Analytics 4 (Measurement Protocol) & Firebase Analytics</strong>: Provided by Google LLC. All transmitted telemetry is strictly pseudonymized and is <strong>never used for cross-site/cross-app tracking, targeted advertising, or user profiling</strong>.</li>
+            </ul>
+
+            <h2>5. Privacy Inquiries and Support</h2>
+            <p>If you have any questions or feedback regarding our privacy practices, please contact us via:</p>
+            <ul>
+                <li>Email: <a href="mailto:support@whitelips.com">support@whitelips.com</a> (or open an issue on our GitHub repository)</li>
+                <li>Support Website: <a href="https://whitelips.github.io/fontopia-support/">https://whitelips.github.io/fontopia-support/</a></li>
+            </ul>
+
+            <div class="footer">
+                <span>Announced Date: September 18, 2026</span>
+                <span>Effective Date: September 18, 2026</span>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function getPreferredLanguage() {
+            // 1. URL search parameter (?lang=en or ?lang=ko)
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryLang = urlParams.get('lang');
+            if (queryLang === 'ko' || queryLang === 'en') return queryLang;
+
+            // 2. URL hash (#en or #ko)
+            const hash = window.location.hash.replace('#', '').toLowerCase();
+            if (hash === 'ko' || hash === 'en') return hash;
+
+            // 3. Local storage preference
+            try {
+                const stored = localStorage.getItem('fontopia_privacy_lang');
+                if (stored === 'ko' || stored === 'en') return stored;
+            } catch (e) {}
+
+            // 4. Browser language detection
+            const browserLang = (navigator.language || (navigator.languages && navigator.languages[0]) || '').toLowerCase();
+            return browserLang.startsWith('ko') ? 'ko' : 'en';
+        }
+
+        function switchLanguage(lang) {
+            const isKo = (lang === 'ko');
+
+            // Toggle active sections
+            document.getElementById('section-ko').classList.toggle('active', isKo);
+            document.getElementById('section-en').classList.toggle('active', !isKo);
+
+            // Toggle active button states
+            document.getElementById('btn-ko').classList.toggle('active', isKo);
+            document.getElementById('btn-en').classList.toggle('active', !isKo);
+
+            // Update title and html lang attribute
+            document.documentElement.lang = isKo ? 'ko' : 'en';
+            document.getElementById('page-title').textContent = isKo 
+                ? 'Fontopia 개인정보 처리방침' 
+                : 'Fontopia Privacy Policy';
+            document.title = isKo 
+                ? '개인정보 처리방침 | Fontopia' 
+                : 'Privacy Policy | Fontopia';
+
+            // Persist preference
+            try {
+                localStorage.setItem('fontopia_privacy_lang', isKo ? 'ko' : 'en');
+            } catch (e) {}
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage(getPreferredLanguage());
+        });
+        window.addEventListener('hashchange', () => {
+            switchLanguage(getPreferredLanguage());
+        });
+    </script>
 </body>
 </html>
