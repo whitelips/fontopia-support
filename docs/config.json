@@ -1,0 +1,75 @@
+{
+  "$schema": "https://whitelips.github.io/fontopia-support/schemas/remote-config.v2.json",
+  "version": "2026.10.05.2",
+  "min_supported_app_version": "1.15.0",
+  "min_supported_extension_version": "1.15.0",
+  "settings": {
+    "polling_interval_seconds": 14400,
+    "emergency_mode": false
+  },
+  "rules": {
+    "hangul_day_2026": {
+      "enabled": true,
+      "target_platforms": ["app", "extension", "widget", "watch"],
+      "target_locales": ["ko", "ko-KR"],
+      "min_app_version": "1.15.0",
+      "min_extension_version": "1.15.0",
+      "rollout_percentage": 100,
+      "start_at": "2026-10-01T00:00:00+09:00",
+      "end_at": "2026-10-15T23:59:59+09:00"
+    }
+  },
+  "campaigns": {
+    "hangul_day_2026": {
+      "enabled": true,
+      "target_platforms": ["app", "extension", "widget", "watch"],
+      "target_locales": ["ko", "ko-KR"],
+      "min_app_version": "1.15.0",
+      "min_extension_version": "1.15.0",
+      "rollout_percentage": 100,
+      "start_at": "2026-10-01T00:00:00+09:00",
+      "end_at": "2026-10-15T23:59:59+09:00"
+    }
+  },
+  "strings_override": {
+    "ko": {
+      "brand_title": "글꽃마루",
+      "guide_title": "글꽃마루 사파리 덧붙임 안내",
+      "guide_step_1": "Safari 주소창 왼쪽의 **가가 단추**를 누르세요",
+      "guide_step_2": "차림표에서 **확장 프로그램 관리**를 누르세요",
+      "guide_step_3": "목록에서 **글꽃마루**를 켜주세요",
+      "guide_step_4": "원하는 글꼴을 골라 누르면 누리집 화면이 곱게 바뀝니다",
+      "active_font_badge": "지금 입힌 글꼴",
+      "reset_font_button": "본디 글꼴로 되돌리기",
+      "search_placeholder": "글꼴이나 지은이 찾아보기...",
+      "favorites_title": "꽃갈피",
+      "guide_today_quote_title": "오늘의 고운 글귀",
+      "font_category_gothic": "돋움체",
+      "font_category_myeongjo": "바탕체",
+      "font_category_decorative": "꾸밈체",
+      "font_category_handwriting": "손멋글씨",
+      "font_category_monospace": "가지런체",
+      "font_category_pixel": "모눈체"
+    },
+    "en": {},
+    "ja": {}
+  },
+  "feature_flags": {
+    "show_hangul_badge": true,
+    "enable_watch_quote_sync": true,
+    "enable_clip_playground": true,
+    "enable_remote_announcement": true
+  },
+  "announcement": {
+    "id": "hangul_2026_notice",
+    "show_banner": true,
+    "badge_text": "한글날 특별판",
+    "message": "한글날을 맞아 모든 서체 갈래와 기능 이름을 순우리말로 정성껏 단장했습니다.",
+    "action_url": "",
+    "target_platforms": ["app", "extension", "widget", "watch"],
+    "target_locales": ["ko", "ko-KR"],
+    "min_app_version": "1.15.0",
+    "min_extension_version": "1.15.0",
+    "rollout_percentage": 100
+  }
+}
